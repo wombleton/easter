@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <style>
+      .hidden {
+        display: none;
+      }
+      form {
+        width: 100%;
+        display: table;
+      }
+      input {
+        display: table-cell;
+        box-sizing: border-box;
+        width: 25%;
+        font-size: 2em;
+        padding: 0.3em;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+      h3 {
+        font-size: 2em;
+      }
+    </style>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      var $doc = $(document);
+
+      $doc.on('click', 'input', function() {
+          $(this).select();
+      });
+      $doc.on('input', 'input', function() {
+          var val = $('form').serializeArray().map(function(v) {
+            return v.value;
+          }).join('');
+
+
+          $('#answer').toggleClass('hidden', val !== '5624');
+      });
+    </script>
+    <title>Happy Easter</title>
+  </head>
+
+  <body>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Happy Easter Julian!</h1>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a class="zip"><em>eat</em> CHOCOLATE</a><a href="https://github.com/wombleton/easter/tarball/master" class="tgz"><em>eat</em> ALL OF IT</a>
+        </span>
+      </section>
+
+      <span class="banner-fix"></span>
+
+      <section id="main_content">
+      <h3>Just solve a simple puzzle!</h3>
+      <p>Enter the code and you'll see where your egg is.</p>
+      <p>To help you, you just need to find your three bunny pieces and assemble them with your sister's bunny pieces. Simple!</p>
+      <form>
+        <input name="1" maxlength="1" size="1" value="0">
+        <input name="2" maxlength="1" size="1" value="0">
+        <input name="3" maxlength="1" size="1" value="0">
+        <input name="4" maxlength="1" size="1" value="0">
+      </form>
+      <img id="answer" src="images/julian-final.jpg" class="hidden"></img>
+      <h3>CLUE ONE</h3>
+      <img src="images/julian-clue-1.jpg"></img>
+      <h3>CLUE TWO</h3>
+      <img src="images/julian-clue-2.jpg"></img>
+      <h3>CLUE THREE</h3>
+      <img src="images/julian-clue-3.jpg"></img>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a>a modest bunny</a> </p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
