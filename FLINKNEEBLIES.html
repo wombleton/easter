@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        background: #fff;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        border: none;
+        background: none;
+        color: #fff;
+      }
+    </style>
+
+    <title>EASTER | Easter</title>
+
+  </head>
+  <body>
+    <div id="container">
+      <button>click me</button> 
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $('button').on('click', function () {
+        $('#container').html('<img src="' + 'images/julian-clue-1.jpg' + '"/>');
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        background: #fff;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #crossword {
+        display: flex;
+        flex-direction: column;
+      }
+      #crossword .word {
+        flex: 0 0 auto;
+        display: flex;
+      }
+      #crossword input {
+        color: red;
+        font-size: 24px;
+        width: 28px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #crossword input.correct, #crossword input:disabled {
+        color: green;
+      }
+      #crossword .blank {
+        height: 34px;
+        width: 34px;
+      }
+    </style>
+
+    <title>EASTER | Easter</title>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="crossword">
+        
+        <div class="word">
+          <div class="blank"></div>
+          <input maxlength="1" data-val="t"/>
+          <input maxlength="1" data-val="h"/>
+          <input maxlength="1" data-val="r"/>
+          <input maxlength="1" value="e" disabled/>
+          <input maxlength="1" data-val="e"/>
+
+        </div>
+        <div class="word">
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <input maxlength="1" data-val="e"/>
+          <input maxlength="1" value="a" disabled/>
+          <input maxlength="1" data-val="t"/>
+        </div>
+        <div class="word">
+          <input maxlength="1" data-val="c"/>
+          <input maxlength="1" data-val="l"/>
+          <input maxlength="1" data-val="u"/>
+          <input maxlength="1" data-val="e"/>
+          <input maxlength="1" value="s" disabled/>
+        </div>
+        <div class="word">
+          <div class="blank"></div>
+          <input maxlength="1" data-val="h"/>
+          <input maxlength="1" data-val="u"/>
+          <input maxlength="1" data-val="n"/>
+          <input maxlength="1" value="t" disabled/>
+        </div>
+        <div class="word">
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <input maxlength="1" value="e" disabled/>
+          <input maxlength="1" data-val="g"/>
+          <input maxlength="1" data-val="g"/>
+        </div>
+        <div class="word">
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <input maxlength="1" data-val="t"/>
+          <input maxlength="1" data-val="h"/>
+          <input maxlength="1" value="r" disabled/>
+          <input maxlength="1" data-val="o"/>
+          <input maxlength="1" data-val="w"/>
+          <input maxlength="1" data-val="v"/>
+          <input maxlength="1" data-val="e"/>
+          <input maxlength="1" data-val="r"/>
+          <input maxlength="1" data-val="w"/>
+          <input maxlength="1" data-val="a"/>
+          <input maxlength="1" data-val="t"/>
+          <input maxlength="1" data-val="c"/>
+          <input maxlength="1" data-val="h"/>
+        </div>
+      </div>
+      <ol>
+        <li>How many days before the Easter zombie rose</li>
+        <li>Put it in your face and ___</li>
+        <li>How you guess these words</li>
+        <li>You're on one now</li>
+        <li>A box without hinges, key, or lid, yet golden treasure inside is hid.</li>
+        <li>Why there's no ranks below 500</li>
+      </ol>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      var inputs = $('input:not(:disabled)')
+      inputs.on('keyup', function () {
+        var correct = true
+        inputs.each(function () {
+          var $this = $(this)
+          if ($this.val().toLowerCase() === $this.attr('data-val')) {
+            $this.addClass('correct');
+          } else {
+            $this.removeClass('correct');
+            correct = false
+          }
+        })
+        if (correct) {
+          $('#container').html('<img src="' + 'images/julian-clue-1.jpg' +  '"/>')
+        }
+      })
+    </script>
+  </body>
+</html>
+

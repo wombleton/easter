@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css?v=c22359d0a9bdff77a5618c41f18bda570f65ba04">
+    <style>
+      #container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+      #main_content {
+        position: relative;
+        height: 620px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      #fly {
+        position: absolute;
+      }
+      button {
+        font-size: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        border: 2px solid #888;
+        font-weight: bold;
+      }
+
+      button span {
+        display: inline;
+      }
+
+      button:disabled {
+        color: #888;
+      }
+      h2 span {
+        transition: opacity 0.2s ease-in-out;
+      }
+      h2 span.hover {
+        opacity: 0;
+      }
+    </style>
+
+<title>EASTER | Easter</title>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>EASTER</h1>
+        <h2></h2>
+      </header>
+      <section id="main_content">
+        <h1>VERY EASY, INSPECTOR, JUST CLICK THE BUTTON</h1>
+        <h2><span>DON'T </span>CHEAT INSPECTOR</h2>
+        <span id="fly"><button>CLICK ME</button></span>
+      </section>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- HERE IS THE SCRIPT TAG YOU WANT -->
+    <script>
+      // THIS IS IMPORTANT
+      window.ENABLE_CHEAT = false;
+      // REALLY
+
+      var hover = $('h2 span')
+      var fly = $('#fly');
+      var button = $('#fly button')
+
+      function flyaway(e) {
+        console.log('type in window.ENABLE_CHEAT = true!')
+        if (window.ENABLE_CHEAT) {
+          return
+        }
+        var position = fly.position();
+        var randX = Math.floor(Math.random() * 480);
+        if (position.left < (window.innerWidth / 2)) {
+          randX += 480;
+        }
+        var randY = Math.floor(Math.random() * (320));
+
+        hover.addClass('hover')
+        button
+          .attr('disabled', 'disabled');
+        fly
+          .stop()
+          .animate({ "left": randX + "px", "top": randY + "px" })
+
+        setTimeout(function() {
+          hover.removeClass('hover');
+          button.removeAttr('disabled');
+        }, 250)
+      }
+
+      $(document).ready(function () {
+        fly.on('mouseenter mouseover', flyaway);
+        button.on('click', function () {
+          $('#main_content').html('<img src="' + 'images/julian-clue-1.jpg' + '"/>');
+        })
+      });
+     </script>
+  </body>
+</html>

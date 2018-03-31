@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        background: url(images/34861761663_6681410c8c_k.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 1024px;
+        position: relative;
+        height: 678px;
+      }
+      #container a {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 320px;
+        left: 740px;
+        width: 4px;
+        height: 4px;
+        background: rgba(255,255,255,0.3);
+      }
+      h2 {
+        position: absolute;
+        color: #fff;
+        margin: 30px;
+      }
+    </style>
+
+    <title>EASTER | Easter</title>
+
+  </head>
+  <body>
+    <div id="container">
+      <h2>something to click is hidden here ...</h2>
+      <a></a>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $('a').on('click', function () {
+        $('#container').css('backgroundImage', 'url(' + 'images/julian-clue-1.jpg' + ')')
+      })
+    </script>
+  </body>
+</html>
+
